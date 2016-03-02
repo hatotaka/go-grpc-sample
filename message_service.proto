@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package gogrpcsample;
+
+service MessageService {
+	rpc SendMessage (Message) returns (Result){};
+	rpc WatchMessage (WatchType) returns(stream Message){};
+}
+
+message Message{
+	string body = 1;
+}
+
+message Result{
+}
+
+message WatchType{
+}
